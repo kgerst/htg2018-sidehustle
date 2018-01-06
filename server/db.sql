@@ -33,7 +33,7 @@ CREATE TABLE skills (
 CREATE TABLE projects (
   id serial primary key not null,
   name varchar (100),
-  description varchar (500) not null,
+  description varchar (500) not null, -- make this 140
   numteam int not null,
   currentnumteam int not null default 0,
   projectTime int,
@@ -67,3 +67,14 @@ INSERT INTO levels (level, descript) VALUES (1, '1-5 hours');
 INSERT INTO levels (level, descript) VALUES (2, '5-10 hours');
 INSERT INTO levels (level, descript) VALUES (3, '10-20 hours');
 INSERT INTO levels (level, descript) VALUES (4, '20+ hours');
+
+-- adding user database
+--INSERT INTO users (name, password, email, bio, compensation, created, open, token, expires) VALUES
+--('Suzanna Altman', 'I am a front end developer with loads of experience in JavaScript. I love learning about the IOT and would love to work on a project where I can expand this skillset.', '')
+
+--Suzanna	Altman	I am a front end developer with loads of experience in JavaScript. I love learing about the IoT and would love to work on a project where I can expand this skillset. 	Design, Development	3,5	Either	1-5
+-- select concat('(''', name, ''',', ''',', password, ''',', ''',', email, ''',', ''',', bio, ',', compensation, ',', ')') from users;
+--
+-- (name, password, email, bio, compensation, created, open, token, expires
+--
+-- select * from users

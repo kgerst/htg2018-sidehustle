@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
 });
 
 app.use('/users', users);
-// app.use('/projects', projects);
+app.use('/projects', projects);
 // app.use('/', routes);
 // app.use(app.router);
 // routes.initialize(app);
