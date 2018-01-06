@@ -50,3 +50,18 @@ CREATE TABLE user_skills(
   skill_id INT REFERENCES skills(id) ON DELETE CASCADE,
   proficiency int not null default 0 --(1-5)
 )
+
+--adding skill data
+INSERT INTO skills (skill) VALUES ('Design');
+INSERT INTO skills (skill) VALUES ('Illustration');
+INSERT INTO skills (skill) VALUES ('Development');
+INSERT INTO skills (skill) VALUES ('QA');
+INSERT INTO skills (skill) VALUES ('Photography');
+INSERT INTO skills (skill) VALUES ('Music');
+INSERT INTO skills (skill) VALUES ('Painting');
+
+--adding level data
+INSERT INTO levels (level, descript) VALUES (1, '1-5 hours');
+INSERT INTO levels (level, descript) VALUES (2, '5-10 hours');
+INSERT INTO levels (level, descript) VALUES (3, '10-20 hours');
+INSERT INTO levels (level, descript) VALUES (4, '20+ hours');

@@ -54,3 +54,26 @@ app.get ('/getTasks', function(req, res){
       }
         });
 });//end app.get
+
+app.post ('/create', function(req, res){
+
+    console.log("task recieved from client: ", req.body.info);
+
+    pool.connect(function(err, connection, done){
+      if (err) {
+        // res.send("Error in /createTask route");
+        res.send(400);
+      }
+      else {
+        console.log("success! We reached the database. ");
+        //TODO need to set up the database so we can pass info to it!
+        completeStatus = 'N';
+        connection.query("INSERT into tasks(info, complete) values ($1, $2)", [req.body.info, completeStatus]);
+
+        done();
+        res.send(200);
+    }
+
+});
+
+});//end app.post
