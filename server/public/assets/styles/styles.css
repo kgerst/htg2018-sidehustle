@@ -1,0 +1,74 @@
+html, body {
+  font-size: 15px;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  color: #36454f;
+}
+h1, h2, h3, h4, h5, h6, .logo {
+  font-family: 'Shrikhand', cursive;
+  color: #ff634f;
+  letter-spacing: 1px;
+}
+a {
+  text-decoration: underline;
+}
+.black, .black a {
+  background: #000;
+  color: #fff;
+}
+.gray {
+  background: #36454f;
+}
+.orange {
+  background: #ff634f;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.small {
+  font-size: 8px;
+}
+
+header {
+  padding: 5px 0;
+}
+footer, main {
+  padding: 25px 0;
+}
+header a {color: #fff; text-decoration: none;}
+
+main {min-height: 80vh;}
+
+
+/* Header */
+.logo {
+  font-size: 30px;
+  letter-spacing: 2px;
+  padding: 10px 0 0;
+}
+.main-menu {
+  padding-top: 5px;
+}
+.main-menu .row {
+  margin: 0;
+}
+.main-menu a {
+  padding: 0 14px;
+  text-transform: uppercase;
+}
+.projects, .profiles {
+  font-size: 0;
+}
+.projects:after, .profiles:after {
+  content: '\F0C0';
+  font-family: fontawesome;
+  font-size: 25px;
+}
+.projects:after {
+  content: '\f0eb';
+  font-size: 30px;
+  position: relative;
+  top: 2px;
+}

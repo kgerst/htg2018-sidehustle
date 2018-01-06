@@ -2,6 +2,7 @@
 <html ng-app = "hustleApp">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hustle</title>
     <!-- LIBRARIES -->
     <script src = "vendor/angular/angular.min.js"></script>
@@ -19,15 +20,39 @@
   </head>
 
   <body>
-    <header class="container-fluid">
-      Sup I'm a header
+    <header class="black">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-5">
+            <a href="/"><div class="logo">Hustle</div></a>
+          </div>
+          <div class="col-xs-7">
+            <div class="main-menu text-right">
+              <a class="projects" href="/projects">Projects</a>
+              <a class="profiles" href="/profiles">Profiles</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="container">
-      THIS IS THE MAIN AREA
+      <div ng-view>
+
+      </div>
     </main>
-    <footer class="footer container-fluid">
-      This is the footer
+    <footer class="footer black">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div><a href="/about">About Hustle</a></div>
+            <div><a href="/get-involved">Get Involved</a></div>
+          </div>
+          <div class="col-xs-12 small text-right">
+            &copy; Copyright 2018 All rights reserved.
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 
