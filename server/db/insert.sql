@@ -15,7 +15,7 @@ VALUES
 ('Suzanna', 'Altman', 'qwe123', 's.altman@gmail.com', 'I am a front end developer with loads of experience in JavaScript. I love learing about the IoT and would love to work on a project where I can expand this skillset.', 'Either'),
 ('Amanda', 'Schlosser', 'qwe123', 'a.schlosser@gmail.com',  'I am an exerpienced designer who loves making cat cards in my free time! I''m looking for projects where I can grow my experience in front end design but would also love contribute my design experience to any projects involving art or cats!', 'Money'),
 ('Elise', 'Ogden', 'qwe123', 'e.ogden@gmail.com', 'I am a photographer and product person. I enjoy taking portraits most but am als experienced in urban landscapes and event photography. I''d like to contribute my skills to any project with a social mission.', 'Trade'),
-('Jessica', 'Oakes', 'qwe123', 'j.oakes@gmail.com', 'I am a backend developer and calligrapher/illustrator. Happy to put my skills to use on any project!', 'Either')
+('Jessica', 'Oakes', 'qwe123', 'j.oakes@gmail.com', 'I am a backend developer and calligrapher/illustrator. Happy to put my skills to use on any project!', 'Money')
 ;
 
 --adding skill data
@@ -39,6 +39,24 @@ VALUES
 (4, '20+ hours')
 ;
 
+INSERT INTO users_levels
+(user_id, level_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4)
+;
+
+
+INSERT INTO project_levels
+(project_id, level_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4)
+;
 
 INSERT INTO user_skills
 (user_id, skill_id, proficiency)

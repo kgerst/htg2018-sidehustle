@@ -39,6 +39,11 @@ CREATE TABLE users_levels (
   level_id INT REFERENCES levels(id) ON DELETE CASCADE
 );
 
+CREATE TABLE projects_levels (
+  project_id INT REFERENCES projects(id) ON DELETE CASCADE,
+  level_id INT REFERENCES levels(id) ON DELETE CASCADE
+);
+
 CREATE TABLE users_projects(
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
   project_id INT REFERENCES projects(id) ON DELETE CASCADE
