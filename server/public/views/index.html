@@ -7,14 +7,16 @@
 
 <body>
     <div id="fb-root"></div>
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    <fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();"></fb:login-button>
+    
     <script>
     window.fbAsyncInit = function() {
         FB.init({
             appId: '1924963380866488',
+            status: true,
             cookie: true,
-            xfbml: true,
-            version: 'v2.11'
+            xfbml: true,            
+            version: 'v2.4'
         });
 
         FB.getLoginStatus(function(response) {
