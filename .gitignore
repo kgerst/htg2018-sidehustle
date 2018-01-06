@@ -1,2 +1,8 @@
 node_modules/
-    .DS_Store
+.DS_Store
+npm-debug.log
+server/public/assets/scripts/composite.all.min.js
+adminMongo
+MOCK_DATA.json
+server/public/vendor
+_config.js

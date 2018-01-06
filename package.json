@@ -1,7 +1,7 @@
 {
   "name": "htg2018-sidehustle",
   "version": "1.0.0",
-  "description": "",
+  "description": "hustleApp",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
@@ -18,7 +18,15 @@
   },
   "homepage": "https://github.com/kgerst/htg2018-sidehustle#readme",
   "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5",
     "body-parser": "^1.18.2",
-    "express": "^4.16.2"
+    "bootstrap": "^3.3.6",
+    "express": "^4.16.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^2.2.3"
   }
 }
