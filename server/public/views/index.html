@@ -17,9 +17,29 @@
             version: 'v2.11'
         });
 
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+
         FB.AppEvents.logPageView();
 
     };
+
+    function statusChangeCallback(response) {
+      console.log("statusChangeCallback");
+      console.log(response);
+      if (response.status === "connected") {
+        console.log("CONNECTED with user ID: " + response.authResponse.userID);
+      }
+
+    }
+
+    function checkLoginState() {
+      console.log("checkLoginState");
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);        
+      });
+    }
 
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
