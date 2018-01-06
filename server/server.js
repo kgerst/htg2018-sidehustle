@@ -4,7 +4,7 @@ var app = express();
 var pg = require('pg');
 
 
-app.use(express.static('public'));
+app.use(express.static('server/public'));
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/views/index.html'));
