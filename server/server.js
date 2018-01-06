@@ -7,14 +7,14 @@ var pg = require('pg');
 var users = require('./routes/user');
 var projects = require('./routes/projects');
 
-app.use(express.static('server/public'));
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/views/index.html'));
 });
 
-app.use('/users', users);
-// app.use('/projects', projects);
+//app.use('/users', users);
+app.use('/projects', projects);
 // app.use('/', routes);
 // app.use(app.router);
 // routes.initialize(app);

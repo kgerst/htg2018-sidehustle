@@ -23,7 +23,7 @@ router.get('/', function(req, res) {
       console.log('adminDB connection ready');
       let resultSet = connection.query('SELECT * FROM users');
       resultSet.on('row', function(row) {
-        adminStaff.push(row);
+        users.push(row);
       }); //row end
       resultSet.on('end', function() {
 

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +18,6 @@
   "homepage": "https://github.com/kgerst/htg2018-sidehustle#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "pg": "^7.4.1"
+    "express": "^4.16.2"
   }
 }
