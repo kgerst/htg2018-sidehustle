@@ -13,28 +13,62 @@ var pool = new pg.Pool( config );
 
 router.get('/', function(req, res) {
   console.log('In the users route', req.body);
-  let users = [];
+  var users = [];
   pool.connect(function(error, connection, done) {
     if (error) {
       console.log('adminRouteError', error);
       res.sendStatus(400);
     } //end if
     else {
-      console.log('adminDB connection ready');
-      let resultSet = connection.query('SELECT * FROM users');
-      resultSet.on('row', function(row) {
-        adminStaff.push(row);
-      }); //row end
-      resultSet.on('end', function() {
+      var query = "SELECT * " +
+      "FROM users";
 
-        done();
-        console.log(users);
-        res.send(users);
-      }); // resultSet end
+      connection.query(query, function(err, result) {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+          process.exit(1);
+        } else {
+          res.send(result.rows);
+          done();
+        }
+      });
+
     } //end else
   }); //pool.connect end
 }); //router.GET end
 
+
+router.get('/profile/:id', function(req, res) {
+  var id = req.params.id;
+
+  pool.connect(function(err, connection, done) {
+    if (err) {
+      res.sendStatus(400);
+    }
+    else {
+      var query = "SELECT concat(u.name, ' ', u.last_name) AS name, u.email, u.bio, u.compensation,\n" +
+        " array_agg((SELECT skill FROM skills s WHERE s.id = us.skill_id)) AS skills,\n" +
+        " array_agg((SELECT distinct descript from levels l where l.level = ul.level_id)) as level\n" +
+        " FROM users AS u\n" +
+        " join user_skills us on u.id = us.user_id \n" +
+        " join users_levels ul on u.id = ul.user_id\n" +
+        " where u.id = $1\n" +
+        " group by u.name, u.last_name, u.bio, u.compensation, u.email";
+
+      connection.query(query, [id], function(err, result) {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+          process.exit(1);
+        } else {
+          res.send(result.rows);
+          done();
+        }
+      });
+    }
+  });
+});
 
 
 module.exports = router;
