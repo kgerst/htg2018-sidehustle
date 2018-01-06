@@ -8,7 +8,9 @@ CREATE TABLE users (
   bio varchar (400) not null,
   compensation varchar (100), -- 3 options
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  open boolean default TRUE--boolean true false
+  open boolean default TRUE,--boolean true false
+  token varchar (100) default '',
+  expires timestamp default now(),
 );
 
 CREATE TABLE users_levels (
