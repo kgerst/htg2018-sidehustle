@@ -6,6 +6,10 @@ hustleApp.controller('ProjectController', function($scope, $http) {
   // var hours = vm.hours;
   // var progress = vm.progress
 
+  vm.btnClick = function(){
+    console.log('test');
+    
+  };
 
   vm.getProjects = function(){
   console.log("in GET call for projects");
