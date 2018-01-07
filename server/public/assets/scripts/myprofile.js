@@ -1,3 +1,7 @@
+var Slider = require('bootstrap-slider');
+// var pg = require('pg');
+
+
 hustleApp.controller('MyProfileController', function($scope, $http) {
   console.log('MyProfileController loaded');
   var vm = this;
@@ -22,9 +26,15 @@ hustleApp.controller('MyProfileController', function($scope, $http) {
 // vm.getProjects();
 
 
-$('#ex1').slider({
-	formatter: function(value) {
-		return 'Current value: ' + value;
-	}
-});
+// $('#ex1').slider({
+// 	formatter: function(value) {
+// 		return 'Current value: ' + value;
+// 	}
+// });
+
+  var slider = new Slider('#ex1', {
+  	formatter: function(value) {
+  		return 'Current value: ' + value;
+  	}
+  });
 });

@@ -114,8 +114,8 @@ img {
 
 #ex1Slider .slider-selection {
 	background: #BABABA;
-=======
-.connected {display: none;}
+}
+/*.connected {display: none;}
 .connected.open {
   display: block;
   position: absolute;
@@ -125,7 +125,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-}
+}*/
 /* Buttons */
 .btn-primary, a.btn-primary {
 }
