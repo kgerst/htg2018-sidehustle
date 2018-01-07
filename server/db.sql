@@ -31,7 +31,8 @@ CREATE TABLE projects (
   currentnumteam int default 0,
   projectTime int,
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  compensation varchar (100)
+  compensation varchar (100),
+  img_url varchar(200)
 );
 
 CREATE TABLE users_levels (
