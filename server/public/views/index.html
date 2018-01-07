@@ -7,13 +7,11 @@
     <!-- LIBRARIES -->
     <script src = "vendor/angular/angular.min.js"></script>
     <script src = "vendor/angular-route/angular-route.min.js"></script>
-    <script src="../assets/scripts/app.config.js">
-
-    <script src = "vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <script src="../assets/scripts/app.config.js"></script>
     <script src = "vendor/jquery/dist/jquery.min.js"></script>
+    <script src = "vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <link rel = "stylesheet" href = "vendor/bootstrap/dist/css/bootstrap.min.css" />
-    <script src="https://use.fontawesome.com/9b837454c3.js"></script>
+    <script src="https://use.fontawesome.com/fa6479cb66.js"></script>
     <script src="../assets/scripts/clientsprojects.js"></script>
     <script src="../assets/scripts/home.js"></script>
 
@@ -45,7 +43,7 @@
     </header>
 
     <main class="container" ng-Controller = "HomeController">
-      <div ng-view>
+      <div ng-view class="row">
 
 
       </div>
@@ -64,5 +62,14 @@
       </div>
     </footer>
   </body>
+  
+  <script>
+    $( document ).ready(function() {
+      $('.btn-connected').on('click', function(){
+        console.log('clicked');
+      })
+    });
+  </script>
+
 
 </html>
