@@ -6,17 +6,22 @@ hustleApp.controller('ProjectController', function($scope, $http) {
   // var hours = vm.hours;
   // var progress = vm.progress
 
-  // vm.btnClick = function(id){
-  //   console.log('this', $(this) );
-  //   console.log('id', id);
-  //   $('.connected').addClass('open');
-  // };
+  vm.btnClick = function(id){
+    console.log('this', $(this) );
+    console.log('id', id);
+    $('.connected').addClass('open');
+  };
+  vm.btnDismiss = function(id){
+    console.log('this', $(this) );
+    console.log('id', id);
+    $('.connected').removeClass('open');
+  };
 
   vm.getProjects = function(){
   console.log("in GET call for projects");
   return $http({
     method: 'GET',
-    url: '/projects'
+    url: '/api/projects'
   }).then(function(response){
     console.log("response from server in get projects: ", response.data);
     vm.myProjects = response.data;

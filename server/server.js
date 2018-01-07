@@ -9,15 +9,20 @@ var projects = require('./routes/projects');
 
 app.use(express.static('server/public'));
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'public/views/index.html'));
-});
+// app.get('/', function(req, res) {
+//   res.sendFile(path.join(__dirname, 'public/views/index.html'));
+// });
 
-app.use('/users', users);
-app.use('/projects', projects);
+app.use('/api/users', users);
+app.use('/api/projects', projects);
 // app.use('/', routes);
 // app.use(app.router);
 // routes.initialize(app);
+
+app.use(function(req, res) {
+  // Use res.sendfile, as it streams instead of reading the file into memory.
+  res.sendfile(__dirname + '/public/views/index.html');
+});
 
 
 // server port set and listen
