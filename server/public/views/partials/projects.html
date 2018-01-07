@@ -12,6 +12,7 @@
   </div>
 
 
+
   <div ng-repeat = "thing in projects.myProjects">
     <div class="col-xs-12">
       <div class="project-tile">
@@ -24,15 +25,15 @@
           <p><strong>Compensation:</strong> {{thing.compensation}} </p>
           <p><strong>Duration:</strong> {{thing.projecttime}}</p>
           <p><strong>Needed Skills:</strong>   <span ng-repeat = "skill in thing.skills">{{skill.skill}} </span></p>
-          <button type="submit" class="btn btn-secondary btn-lg btn-connected" ng-click="projects.btnClick()">Connect</button>
-          <div class="connected col-xs-12">
-            <h4>Congrats!</h4>
-            <div>You've just made a connection with {{thing.name}}</div>
-            <button ng-click="btnClick($event)" id="{{thing.id}}">Check It Out Now</button>
-            <a href="" class="dismiss">No, I'd rather continue scrolling</a>
-          </div>
+          <button type="submit" class="btn btn-secondary btn-lg btn-connected" id="{{thing.name}}" ng-click="projects.btnClick()">Connect</button>
         </div>
       </div>
     </div>
+  </div>
+  <div class="connected col-xs-12">
+    <h2>Congrats!</h2>
+    <div>You've just made a connection with {{thing.name}}</div>
+    <button>Check It Out Now</button>
+    <div><a href="#" class="dismiss" ng-click="projects.btnDismiss()">No, I'd rather continue scrolling</a></div>
   </div>
 </div>
