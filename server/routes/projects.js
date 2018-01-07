@@ -36,7 +36,7 @@ router.get('/', function(req, res) {
           process.exit(1);
         } else {
           var projects = result.rows;
-          
+
           projects.forEach(function(project) {
             var skills = [];
             if (project.skills && project.skills.length) {
