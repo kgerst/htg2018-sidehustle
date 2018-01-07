@@ -1,6 +1,6 @@
 <h1>Projects</h1>
 
-<div class = "container" >
+<div class = "container" ng-controller="ProjectController">
 PROJECT PAGE!!
 <!-- </div>ng-init = "projects.updateIntention()"> -->
 
@@ -25,7 +25,7 @@ PROJECT PAGE!!
 -->
   <h3>Current Intentions:</h3>
   <div ng-repeat = "thing in projects.myProjects" class = "container intentions">
-      <h2>{{thing.name}}</h2>
+      <h2>{{thing}}</h2>
       <!-- <h4>{{thing.description}}</h4> -->
 <br />
       <!-- <button type="button" ng-click="ic.starIntention(thing)">Star</button> -->

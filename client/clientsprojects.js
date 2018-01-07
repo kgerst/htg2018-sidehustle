@@ -1,7 +1,7 @@
 hustleApp.controller('ProjectController', function($scope) {
   console.log('ProjectController loaded');
-  // var vm = this;
-  // vm.intentions = ["goal1", "goal2", "goal3", "goal4"];
+  var vm = this;
+  vm.myProjects = ["goal1", "goal2", "goal3", "goal4"];
   // var newInput = vm.newInput;
   // var hours = vm.hours;
   // var progress = vm.progress

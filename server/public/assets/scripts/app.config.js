@@ -1,9 +1,9 @@
 console.log("connected!");
 
-var app = angular.module('hustleApp', ['ngRoute']);
+var hustleApp = angular.module('hustleApp', ['ngRoute']);
 
 
-app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+hustleApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider
       .when('/', {
         templateUrl: 'views/partials/home.html',
