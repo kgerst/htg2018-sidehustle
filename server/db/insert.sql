@@ -1,12 +1,12 @@
 -- KEEP double single quotes
 
 INSERT INTO projects
-(name, description)
+(name, description, compensation, projecttime)
 VALUES
-('Internet of Awesome', 'We''re using IoT to solve global warming.'),
-('Upcycled Greeting Cards', 'Help us create cute greeting cards using totally upcylced materials.'),
-('Zombie fashion show', 'We''re hosting a zombie fashion show for charity. We''re looking for photographers and designers to help create marking assets and shoot the models!'),
-('Album art', 'We''re a local band looking for an illustrator to help is with our new album art. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim')
+('Internet of Awesome', 'We''re using IoT to solve global warming.', 'Either', 1),
+('Upcycled Greeting Cards', 'Help us create cute greeting cards using totally upcylced materials.', 'Money', 2),
+('Zombie fashion show', 'We''re hosting a zombie fashion show for charity. We''re looking for photographers and designers to help create marking assets and shoot the models!', 'Trade', 3),
+('Album art', 'We''re a local band looking for an illustrator to help is with our new album art. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim', 'Either', 4)
 ;
 
 INSERT INTO users

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
+var random = require('../../modules/alphaNumericRandomizer');
 
 var config = {
   database: 'htg_hustle',
@@ -62,13 +63,43 @@ router.get('/profile/:id', function(req, res) {
           res.status(500).send(err);
           process.exit(1);
         } else {
-          res.send(result.rows);
+          var profiles = result.rows;
+          profiles.forEach(function(profile) {
+            if (profile.level && profile.level.length) profile.level = profile.level[0];
+          });
+          res.send(profiles[0]);
           done();
         }
       });
     }
   });
 });
+
+
+router.get('/skills', function(req, res) {
+
+  pool.connect(function(err, connection, done) {
+    if (err) {
+      res.sendStatus(500);
+    }
+    else {
+      var query = "select * from skills";
+
+      connection.query(query, [id], function(err, result) {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+          process.exit(1);
+        } else {
+          var skills = result.rows;
+          res.send(skills);
+          done();
+        }
+      });
+    }
+  });
+});
+
 
 
 module.exports = router;
