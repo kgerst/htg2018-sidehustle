@@ -106,10 +106,10 @@ img {
   width: 100%;
 }
 .connected {display:none;}
-.connected a { color: #fff;}
+.connected a, .connected h2 { color: #fff;}
 .connected.open {
   display: block;
-  position: absolute;
+  position: fixed;
   background: rgba(0, 155, 36, .9);
   color: #fff;
   top: 0;
@@ -119,6 +119,9 @@ img {
   z-index: 100;
   padding: 40px;
   font-size: 20px;
+}
+.connected-txt {
+  top: 50%;
 }
 /* Buttons */
 .btn-primary, a.btn-primary {
