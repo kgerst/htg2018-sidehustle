@@ -44,7 +44,7 @@ footer {
 }
 header a {color: #fff; text-decoration: none;}
 
-main {min-height: 80vh;}
+main {min-height: 75vh;}
 
 
 
@@ -102,24 +102,11 @@ img {
   max-width: 100%;
   width: 100%;
 }
-
-.btn-primary {
-  padding: 5px;
-  margin: 5px;
-}
-
-.form-group {
-  padding-left: 10px;
-}
-
-#ex1Slider .slider-selection {
-	background: #BABABA;
-=======
-.connected {display: none;}
+.connected {display:none;}
 .connected.open {
   display: block;
   position: absolute;
-  background: rgba(0, 155, 36, .5);
+  background: rgba(0, 155, 36, .8);
   color: #fff;
   top: 0;
   left: 0;
