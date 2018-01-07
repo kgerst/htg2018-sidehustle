@@ -1,5 +1,82 @@
 <h1>Tell Us More About You</h1>
-<div ng-controller="ExampleController">
+
+<link rel="stylesheet" href="../assets/styles/rangeslider.css">
+
+<div ng-controller="MyProfileController">
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="email">Give us a short bio about yourself:</label>
+      <br />
+      <input type="email" class="form-control" id="email">
+    </div>
+
+    <h2>What skills do you possess?</h2>
+    <h4>(select and slide all that apply)</h4>
+    <div class="form-group">
+    <input type="checkbox" id="checkbox100">
+    <label for="checkbox100">Design</label>
+</div>
+
+<!-- <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/> -->
+<div class="form-group">
+    <input type="checkbox" class="filled-in" id="checkbox101">
+    <label for="checkbox101">Illustration</label>
+</div>
+
+<div class="form-group">
+    <input type="checkbox" class="filled-in" id="checkbox101">
+    <label for="checkbox101">Development</label>
+</div>
+
+<div class="form-group">
+    <input type="checkbox" class="filled-in" id="checkbox101">
+    <label for="checkbox101">QA</label>
+</div>
+
+<div class="form-group">
+    <input type="checkbox" class="filled-in" id="checkbox101">
+    <label for="checkbox101">Photography</label>
+</div>
+
+<div class="form-group">
+    <input type="checkbox" class="filled-in" id="checkbox101">
+    <label for="checkbox101">Music</label>
+</div>
+
+<div class="form-group">
+    <input type="checkbox" id="checkbox101">
+    <label for="checkbox101">Painting</label>
+</div>
+
+<br />
+<div>
+      I will work for ...
+      <div>
+    <button type="button" class="btn btn-primary">Money</button>
+    <button type="button" class="btn btn-primary">Trade</button>
+    <button type="button" class="btn btn-primary">Either</button>
+  </div>
+
+  </div>
+
+<br />
+<div>
+      I want to contribute
+      <div>
+    <button type="button" class="btn btn-primary">1-5 hours</button>
+    <button type="button" class="btn btn-primary">5-10 hours</button>
+    <button type="button" class="btn btn-primary">10-20 hours</button>
+    <button type="button" class="btn btn-primary">20+ hours</button>
+  </div>
+
+  </div>
+
+<br />
+<br />
+    <a href="/projects"><button type="button" id="bigb" class="btn btn-primary">Continue</button></a>
+
+  <!--
   <form novalidate class="simple-form">
     <label>Name: <input type="text" ng-model="user.name" /></label><br />
     <label>E-mail: <input type="email" ng-model="user.email" /></label><br />
@@ -8,23 +85,6 @@
     <input type="button" ng-click="reset()" value="Reset" />
     <input type="submit" ng-click="update(user)" value="Save" />
   </form>
-  <pre>user = {{user | json}}</pre>
-  <pre>master = {{master | json}}</pre>
+  <pre>user = {{user | json}}</pre> -->
+  <!-- <pre>master = {{master | json}}</pre> -->
 </div>
-
-<script>
-  angular.module('formExample', [])
-    .controller('ExampleController', ['$scope', function($scope) {
-      $scope.master = {};
-
-      $scope.update = function(user) {
-        $scope.master = angular.copy(user);
-      };
-
-      $scope.reset = function() {
-        $scope.user = angular.copy($scope.master);
-      };
-
-      $scope.reset();
-    }]);
-</script>

@@ -6,7 +6,6 @@ hustleApp.controller('ProfileController', function($scope, $http) {
   // var hours = vm.hours;
   // var progress = vm.progress
 
-
   vm.getProfiles = function(){
   console.log("in GET call for profiles");
   return $http({
@@ -15,6 +14,7 @@ hustleApp.controller('ProfileController', function($scope, $http) {
   }).then(function(response){
     console.log("response from server in get projects: ", response.data);
     vm.myProfiles = response.data;
+    // console.log(response.data);
     return response.data;
   });
 };
