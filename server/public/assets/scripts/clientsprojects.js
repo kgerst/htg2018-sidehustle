@@ -16,7 +16,7 @@ hustleApp.controller('ProjectController', function($scope, $http) {
   console.log("in GET call for projects");
   return $http({
     method: 'GET',
-    url: '/projects'
+    url: '/api/projects'
   }).then(function(response){
     console.log("response from server in get projects: ", response.data);
     vm.myProjects = response.data;
