@@ -8,6 +8,11 @@ h1, h2, h3, h4, h5, h6, .logo {
   color: #ff634f;
   letter-spacing: 1px;
 }
+h3.project-title {
+    font-family: 'helvetica', sans-serif;
+    font-weight: 600;
+    color: #36454f;
+}
 a {
   text-decoration: underline;
 }
@@ -34,12 +39,13 @@ a {
 header {
   padding: 5px 0;
 }
-footer, main {
+footer {
   padding: 25px 0;
 }
 header a {color: #fff; text-decoration: none;}
 
 main {min-height: 80vh;}
+
 
 
 /* Header */
@@ -73,10 +79,15 @@ main {min-height: 80vh;}
   top: 2px;
 }
 .my-profile:after {
-  content: '\F0C0';
-  font-family: fontawesome;
-  font-size: 25px;
-
+  content: '\f2be';
+  font-size: 30px;
+  position: relative;
+  top: 2px;
+}
+.content-grey {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #F5F5F5;
 }
 
 /* Projects */
@@ -103,4 +114,23 @@ img {
 
 #ex1Slider .slider-selection {
 	background: #BABABA;
+=======
+.connected {display: none;}
+.connected.open {
+  display: block;
+  position: absolute;
+  background: rgba(0, 155, 36, .5);
+  color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Buttons */
+.btn-primary, a.btn-primary {
+}
+.btn-secondary, a.btn-secondary {
+    background-color: #F89820;
+    color: #fff;
+    border: none;
 }

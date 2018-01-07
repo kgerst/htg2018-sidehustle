@@ -1,13 +1,39 @@
-<h1>Projects</h1>
 
-<div class = "container" ng-controller="ProjectController" ng-init="projects.getProjects()">
-PROJECT PAGE!!
+<div ng-controller="ProjectController" ng-init="projects.getProjects()">
+  <div class="row text-center content-grey no-margin">
+    <button type="submit" class="btn btn-primary btn-lg" ng-click="registerForm.submitted=true">+ Create New Project</button>
+  </div>
 
-  <h3>Current Intentions:</h3>
-  <div ng-repeat = "thing in projects.myProjects" class = "container intentions">
-      <h2>{{thing.name}}</h2>
-      <!-- <h4>{{thing.description}}</h4> -->
-<br />
+  <div class="text-center">
+    <div class="col-xs-12">
+    <h3>Don’t have a project?</h3>
+    <p>Select one of our recommended projects to get started or just keep scrolling to see more.</p>
+    </div>
+  </div>
 
+
+  <div ng-repeat = "thing in projects.myProjects">
+    <div class="col-xs-12">
+      <div class="project-tile">
+        <div class="project-image">
+          <img src="assets/styles/images/{{thing.img_url}}" />
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">{{thing.name}}</h3>
+          <p><strong>Description:</strong> {{thing.description}}</p>
+          <p><strong>Compensation:</strong> {{thing.compensation}} </p>
+          <p><strong>Duration:</strong> {{thing.projecttime}}</p>
+          <p><strong>Needed Skills:</strong>   <span ng-repeat = "skill in thing.skills">{{skill.skill}} </span></p>
+          <button type="submit" class="btn btn-secondary btn-lg btn-connected" ng-click="registerForm.submitted=true">Connect</button>
+        </div>
+      </div>
+    </div>
+    <div class="connected">
+
+      <h4>Congrats!</h4>
+      <div>You've just made a connection with {{thing.name}}</div>
+      <button class="btn-white">Check It Out Now</button>
+      <a href="" class="dismiss">No, I'd rather continue scrolling</a>
+    </div>
   </div>
 </div>
