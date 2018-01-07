@@ -1,18 +1,19 @@
-<h1>Connections</h1>
-<div class="container" ng-controller="ProfileController" ng-init="profiles.getProfiles()">
-    <div ng-repeat="thing in profiles.myProfiles" class="container intentions">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top img-circle img-responsive" src="http://localhost:3007/assets/img/{{thing.imgname}}.jpg" alt="Card image cap"/>
-        </div>
-        <div class="card-body">
-            <h2 class="card-title">{{thing.name}}</h2>
-            <p class="card-text">{{thing.bio}}</p>
-            <button type="button" class="btn btn-primary">Connect</button>
-        </div>
-
-        <div style="clear:both;" ng-repeat="skill in thing.skills">
-            <p>{{skill}}</p>
-            <!-- <p>Proficiency: {{skill.proficiency}}</p> -->
+<div class="container col-xs-12">
+    <h1>Connections</h1>
+    <div ng-controller="ProfileController" ng-init="profiles.getProfiles()">
+        <div class="col-xs-12" ng-repeat="thing in profiles.myProfiles" class="container intentions">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-circle img-responsive" src="http://localhost:3007/assets/img/{{thing.imgname}}.jpg" alt="Card image cap" />
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">{{thing.name}}</h2>
+                <p class="card-text">{{thing.bio}}</p>
+                <button type="button" class="btn btn-primary">Connect</button>
+            </div>
+            <div style="clear:both;" ng-repeat="skill in thing.skills">
+                <p>{{skill}}</p>
+                <!-- <p>Proficiency: {{skill.proficiency}}</p> -->
+            </div>
         </div>
     </div>
 </div>
