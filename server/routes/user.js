@@ -76,4 +76,30 @@ router.get('/profile/:id', function(req, res) {
 });
 
 
+router.get('/skills', function(req, res) {
+
+  pool.connect(function(err, connection, done) {
+    if (err) {
+      res.sendStatus(500);
+    }
+    else {
+      var query = "select * from skills";
+
+      connection.query(query, [id], function(err, result) {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+          process.exit(1);
+        } else {
+          var skills = result.rows;
+          res.send(skills);
+          done();
+        }
+      });
+    }
+  });
+});
+
+
+
 module.exports = router;
