@@ -11,6 +11,18 @@
     </div>
   </div>
 
+  <div class="connected col-xs-12">
+    <div class="connected-txt">
+      <h2>Congrats!</h2>
+      <div>You've just made a connection</div>
+      <br>
+      <button class="btn btn-white">Check It Out Now</button>
+      <br>
+      <div><a href="#" class="dismiss" ng-click="projects.btnDismiss()">No, I'd rather continue scrolling</a></div>
+    </div>
+  </div>
+
+
 
 
   <div ng-repeat = "thing in projects.myProjects">
@@ -29,11 +41,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="connected col-xs-12">
-    <h2>Congrats!</h2>
-    <div>You've just made a connection with {{thing.name}}</div>
-    <button>Check It Out Now</button>
-    <div><a href="#" class="dismiss" ng-click="projects.btnDismiss()">No, I'd rather continue scrolling</a></div>
   </div>
 </div>
