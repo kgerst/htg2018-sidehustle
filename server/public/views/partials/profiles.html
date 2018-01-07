@@ -1,1 +1,10 @@
 <h1>Profiles</h1>
+
+<div class = "container" ng-controller="ProfileController" ng-init="profiles.getProfiles()">
+here's all my connections:
+  <div ng-repeat = "thing in profiles.myProfiles" class = "container intentions">
+      <h2>{{thing.name}} {{thing.last_name}}</h2>
+<br />
+
+  </div>
+</div>
