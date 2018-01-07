@@ -1,4 +1,3 @@
-
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
@@ -11,42 +10,6 @@ var config = {
 };
 
 var pool = new pg.Pool( config );
-
-// router.get('/getallprojects', function(req, res) {
-//   console.log('In the projects route', req.body);
-//   let projects = [];
-//   pool.connect(function(error, connection, done) {
-    // if (error) {
-    //   console.log('getallProjectsError', error);
-    //   res.sendStatus(400);
-    // } //end if
-    // else {
-    //   console.log('projectsDB connection ready');
-    //   let resultSet = connection.query('SELECT * FROM projects', function(err, rows, fields) {
-//         // console.log(rows);
-//         // console.log(fields);
-//
-//         for (var row in rows) {
-//           console.log("this is a row:");
-//           console.log(row);
-//           console.log(row['name']);
-//           console.log(row.rowAsArray());
-//         }
-//         // rows.forEach(function(row){projects.push(row.name);});
-//         // console.log(projects);
-//       });
-//       // resultSet.on('row', function(row) {
-//       //   projects.push(row);
-//       // }); //row end
-//       // resultSet.on('end', function() {
-//       //
-//       //   done();
-//       //   console.log(projects);
-//       //   res.send(projects);
-//       // }); // resultSet end
-//     } //end else
-//   }); //pool.connect end
-// }); //router.GET end
 
 router.get('/', function(req, res) {
   pool.connect(function(error, connection, done) {
@@ -97,23 +60,41 @@ router.get('/', function(req, res) {
   });
 });
 
-router.post('/addproject', function(req, res){
-  console.log('made to add projects route', req.body);
-  pool.connect(function(err, connection, done){
+
+router.get('/profile/:id', function(req, res) {
+  var id = req.params.id;
+
+  pool.connect(function(err, connection, done) {
     if (err) {
-      console.log(err);
-      res.send(400);
-    } else {
-      console.log('connected to database');
-      connection.query('INSERT INTO projects (name, description) VALUES ($1, $2)', [req.body.p_name, req.body.p_descript]);
-        done();
-        res.sendStatus(200);
-    } // end else
-  }); // end pool connect
-});// end rounter.post
+      res.sendStatus(400);
+    }
+    else {
+      var query = "SELECT concat(u.name, ' ', u.last_name) AS name, u.email, u.bio, u.compensation,\n" +
+        " array_agg((SELECT skill FROM skills s WHERE s.id = us.skill_id)) AS skills,\n" +
+        " array_agg((SELECT distinct descript from levels l where l.level = ul.level_id)) as level\n" +
+        " FROM users AS u\n" +
+        " join user_skills us on u.id = us.user_id \n" +
+        " join users_levels ul on u.id = ul.user_id\n" +
+        " where u.id = $1\n" +
+        " group by u.name, u.last_name, u.bio, u.compensation, u.email";
 
-
-
+      connection.query(query, [id], function(err, result) {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+          process.exit(1);
+        } else {
+          var profiles = result.rows;
+          profiles.forEach(function(profile) {
+            if (profile.level && profile.level.length) profile.level = profile.level[0];
+          });
+          res.send(profiles[0]);
+          done();
+        }
+      });
+    }
+  });
+});
 
 
 module.exports = router;
