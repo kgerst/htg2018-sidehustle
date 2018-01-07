@@ -91,3 +91,16 @@ img {
   max-width: 100%;
   width: 100%;
 }
+
+.btn-primary {
+  padding: 5px;
+  margin: 5px;
+}
+
+.form-group {
+  padding-left: 10px;
+}
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}

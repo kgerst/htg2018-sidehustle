@@ -19,6 +19,9 @@
   "homepage": "https://github.com/kgerst/htg2018-sidehustle#readme",
   "dependencies": {
     "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-aria": "^1.5.5",
+    "angular-material": "^1.1.0-rc4-master-06e7e99",
     "angular-route": "^1.5.5",
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.6",
@@ -27,10 +30,8 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
-    "angular-material": "^1.1.0-rc4-master-06e7e99",
-    "angular-animate": "^1.5.5",
-    "angular-aria": "^1.5.5",
     "jquery": "^2.2.3",
-    "pg": "^7.4.1"
+    "pg": "^7.4.1",
+    "rangeslider.js": "^2.3.2"
   }
 }

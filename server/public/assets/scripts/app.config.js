@@ -19,6 +19,11 @@ hustleApp.config(['$routeProvider', '$locationProvider', function($routeProvider
         templateUrl: 'views/partials/projects.html',
         controller: 'ProjectController',
         controllerAs: 'projects'
+      })
+      .when('/my-profile', {
+        templateUrl: 'views/partials/my-profile.html',
+        controller: 'MyProfileController',
+        controllerAs: 'mp'
       });
 
 
