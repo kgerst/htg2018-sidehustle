@@ -1,1 +1,38 @@
 <h1>Projects</h1>
+
+<div class = "container" >
+PROJECT PAGE!!
+<!-- </div>ng-init = "projects.updateIntention()"> -->
+
+  <!-- <h3>Create:</h3>
+  <input type="text" value="" ng-model="ic.newInput" placeholder="new intention">
+  <br/>
+
+</br/>
+   Hours per week: <select ng-model="ic.hours" name="hours">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option> -->
+  <!-- <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  </select>
+  <button ng-click="ic.addIntention(ic.newInput,ic.hours)"> Submit </button>
+-->
+  <h3>Current Intentions:</h3>
+  <div ng-repeat = "thing in projects.myProjects" class = "container intentions">
+      <h2>{{thing.name}}</h2>
+      <!-- <h4>{{thing.description}}</h4> -->
+<br />
+      <!-- <button type="button" ng-click="ic.starIntention(thing)">Star</button> -->
+      <!-- <button type="button" ng-click="ic.addProgress(thing)" class="addprogressbutton">Add Progress</button> -->
+      <!-- <button type="button" ng-click="ic.removeIntention(thing)" class="removebutton">Remove</button> -->
+
+    <!-- <nvd3 options=thing.options data=thing.data></nvd3> -->
+
+  </div>
+</div>
