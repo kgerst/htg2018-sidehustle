@@ -9,7 +9,7 @@ hustleApp.controller('ProjectController', function($scope) {
 
   // var user = session.user;
 
-  console.log('hours:', hours);
+  // console.log('hours:', hours);
   // vm.myIntentions = [];
 
     // vm.addIntention = function(newInput, hours, userthing){
