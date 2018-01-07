@@ -24,15 +24,14 @@
           <p><strong>Compensation:</strong> {{thing.compensation}} </p>
           <p><strong>Duration:</strong> {{thing.projecttime}}</p>
           <p><strong>Needed Skills:</strong>   <span ng-repeat = "skill in thing.skills">{{skill.skill}} </span></p>
-          <button type="submit" class="btn btn-secondary btn-lg btn-connected" ng-click="registerForm.submitted=true">Connect</button>
+          <button type="submit" class="btn btn-secondary btn-lg btn-connected" ng-click="projects.btnClick()">Connect</button>
         </div>
       </div>
     </div>
     <div class="connected">
-
       <h4>Congrats!</h4>
       <div>You've just made a connection with {{thing.name}}</div>
-      <button class="btn-white">Check It Out Now</button>
+      <button ng-click="btnClick()" class="btn-white">Check It Out Now</button>
       <a href="" class="dismiss">No, I'd rather continue scrolling</a>
     </div>
   </div>
