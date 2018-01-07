@@ -41,10 +41,11 @@ header {
 }
 footer {
   padding: 25px 0;
+  margin-top: 40px;
 }
 header a {color: #fff; text-decoration: none;}
 
-main {min-height: 75vh;}
+main {min-height: 80vh;}
 
 
 
@@ -134,4 +135,11 @@ img {
 .fb-btn {
   height: 50px;
   width: auto;
+}
+.btn-white {color: #000; height: 30px; margin: 15px 0;}
+
+.card {margin: auto;}
+
+@media (max-width: 993px) {
+  html, body, label {font-size: 18px;}
 }
