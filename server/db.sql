@@ -27,7 +27,7 @@ CREATE TABLE projects (
   id serial primary key not null,
   name varchar (100),
   description varchar (500) not null,
-  numteam int not null,
+  numteam int,
   currentnumteam int default 0,
   projectTime int,
   created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
